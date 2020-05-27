@@ -248,17 +248,23 @@ function registerSeat(name, email, mobile, setLoading, setData, setResponse) {
   formData.append("your_email", email);
   formData.append("your_telephone", mobile);
 
+  setResponse("");
+
   fetch(
-    "https://www.tradingfuel.com/wp-content/themes/contentberg-child/form-handler.php",
+    "https://www.tradingfuel.com/wp-json/contact-form-7/v1/contact-forms/8864/feedback",
     {
       method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
       body: formData,
     }
   )
     .then((response) => response.json())
     .then((json) => {
-      console.log("result recieved" + json["output_message"]);
-      setResponse(json["output_message"]);
+      console.log("result recieved" + json["message"]);
+      setResponse(json["message"]);
       setData(json);
     })
     .catch((error) => console.error(error))

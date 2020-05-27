@@ -2,7 +2,11 @@
   "expo": {
     "name": "TradingFuel",
     "slug": "TradingFuel",
-    "platforms": ["ios", "android", "web"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,7 +18,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "sdkVersion": "37.0.0",
     "ios": {
       "supportsTablet": true,
