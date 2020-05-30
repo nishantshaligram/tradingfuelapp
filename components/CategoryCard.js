@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "roboto",
     fontSize: 16,
-    fontWeight: "500",
+    fontWeight: "700",
     lineHeight: 16,
     color: "#fff",
   },

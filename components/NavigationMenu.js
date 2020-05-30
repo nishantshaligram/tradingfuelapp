@@ -94,10 +94,10 @@ const styles = StyleSheet.create({
   menuBtnContainer: {
     position: "absolute",
     bottom: 20,
-    left: "42%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    elevation: 10,
+    right: 0,
+    left: 0,
+    justifyContent: "center",
+    alignItems: "center",
   },
   menuOpenBtn: {
     width: 60,
@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   menuTitle: {
+    fontFamily: "roboto",
     fontSize: 21,
     fontWeight: "700",
     lineHeight: 21,
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   btnText: {
+    fontFamily: "roboto",
     fontSize: 18,
     fontWeight: "500",
     lineHeight: 18,
