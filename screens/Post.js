@@ -10,6 +10,7 @@ import {
   Dimensions,
 } from "react-native";
 import HTML from "react-native-render-html";
+
 import NavigationMenu from "../components/NavigationMenu";
 
 export default function PostDetails(props) {
@@ -32,41 +33,24 @@ export default function PostDetails(props) {
 
   return (
     <SafeAreaView style={styles.body}>
-      <ScrollView>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
+      {isLoading ? (
+        <ActivityIndicator style={styles.activityIndicator} />
+      ) : (
+        <ScrollView>
           <View style={styles.container}>
             <Text style={styles.h1}>{data.title["rendered"]}</Text>
             <Image
               source={{ uri: data._embedded["wp:featuredmedia"][0].source_url }}
               style={{ width: "100%", height: 200, marginBottom: 30 }}
             />
-            {/* <WebView
-              originWhitelist={["*"]}
-              source={{
-                html:
-                  '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body>' +
-                  data.content["rendered"] +
-                  "</body></html>",
-              }}
-              onLoad={() => {
-                console.log("html is being loaded");
-              }}
-              scrollEnabled={false}
-              scalesPageToFit={true}
-              bounces={false}
-              javaScriptEnabled={false}
-              style={{ width: "100%", height: 200 }}
-            /> */}
-            {/* <Text>{data.content["rendered"]}</Text> */}
             <HTML
               html={data.content["rendered"]}
               imagesMaxWidth={Dimensions.get("window").width}
+              baseFontStyle={{ fontSize: 16, fontFamily: "roboto" }}
             />
           </View>
-        )}
-      </ScrollView>
+        </ScrollView>
+      )}
       <NavigationMenu navigation={props.navigation} />
     </SafeAreaView>
   );
@@ -85,9 +69,15 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
   h1: {
+    fontFamily: "oswald",
     fontSize: 26,
     fontWeight: "700",
     lineHeight: 32,
     marginBottom: 30,
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

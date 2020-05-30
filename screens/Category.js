@@ -18,7 +18,9 @@ export default function Category(props) {
   const [data, setData] = useState([]);
 
   let catID = params.id;
+
   useEffect(() => {
+    // props.navigation.setParams({ name: params.title });
     fetch("https://www.tradingfuel.com/wp-json/wp/v2/posts?categories=" + catID)
       .then((response) => response.json())
       .then((json) => {
@@ -32,7 +34,7 @@ export default function Category(props) {
     <SafeAreaView style={styles.body}>
       <View style={styles.container}>
         {isLoading ? (
-          <ActivityIndicator />
+          <ActivityIndicator style={styles.activityIndicator} />
         ) : (
           <FlatList
             horizontal={false}
@@ -60,17 +62,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   container: {
-    width: "100%",
-    height: "100%",
     paddingTop: 25,
     paddingBottom: 25,
     paddingLeft: 25,
     paddingRight: 25,
   },
   h1: {
+    fontFamily: "oswald",
     fontSize: 26,
     fontWeight: "700",
     lineHeight: 32,
     marginBottom: 30,
+  },
+  activityIndicator: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

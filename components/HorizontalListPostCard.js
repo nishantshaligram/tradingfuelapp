@@ -18,10 +18,10 @@ export default function PostCard(props) {
         style={styles.btnMore}
         underlayColor="#ff0d7e"
         onPress={() => {
-          console.log("post pressed");
           props.navigation.navigate("Post", {
             title: props.title,
             id: props.id,
+            name: props.title,
           });
         }}
         onShowUnderlay={() => setTouched(true)}
@@ -37,7 +37,7 @@ export default function PostCard(props) {
   );
 }
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   card: {
     width: 240,
     height: 130,
@@ -49,6 +49,7 @@ let styles = StyleSheet.create({
     position: "relative",
   },
   title: {
+    fontFamily: "roboto",
     fontSize: 16,
     fontWeight: "700",
     lineHeight: 21,
@@ -67,6 +68,7 @@ let styles = StyleSheet.create({
     left: 15,
   },
   btnMoreText: {
+    fontFamily: "roboto",
     fontSize: 14,
     fontWeight: "500",
     lineHeight: 14,

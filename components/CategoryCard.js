@@ -9,10 +9,10 @@ export default function CategoryCard(props) {
       style={styles.card}
       underlayColor="#ff0d7e"
       onPress={() => {
-        console.log("category pressed");
         props.navigation.navigate("Category", {
           title: props.title,
           id: props.id,
+          name: props.title,
         });
       }}
     >
@@ -21,7 +21,7 @@ export default function CategoryCard(props) {
   );
 }
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   card: {
     padding: 15,
     marginRight: 8,
@@ -30,6 +30,7 @@ let styles = StyleSheet.create({
     backgroundColor: "#5674ef",
   },
   title: {
+    fontFamily: "roboto",
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 16,

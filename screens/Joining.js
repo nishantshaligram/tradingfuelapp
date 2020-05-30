@@ -244,14 +244,14 @@ function isValidMobile(mobile) {
 
 function registerSeat(name, email, mobile, setLoading, setData, setResponse) {
   let formData = new FormData();
-  formData.append("your_name", name);
-  formData.append("your_email", email);
-  formData.append("your_telephone", mobile);
+  formData.append("your-name", name);
+  formData.append("your-mobile", mobile);
+  formData.append("your-email", email);
 
   setResponse("");
 
   fetch(
-    "https://www.tradingfuel.com/wp-json/contact-form-7/v1/contact-forms/8864/feedback",
+    "http://www.tradingfuel.com/wp-json/contact-form-7/v1/contact-forms/8864/feedback",
     {
       method: "POST",
       mode: "cors",

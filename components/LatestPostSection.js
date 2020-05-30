@@ -53,9 +53,10 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
   sectionTitle: {
-    fontSize: 18,
+    fontFamily: "oswald",
+    fontSize: 21,
     fontWeight: "500",
-    lineHeight: 18,
+    lineHeight: 24,
     marginBottom: 10,
   },
 });
